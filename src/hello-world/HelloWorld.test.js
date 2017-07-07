@@ -16,7 +16,7 @@ test('renders with default state', () => {
   const render = ReactDOM.render(<HelloWorld />, div)
 
   expect(render.state.greeting).toBe('Hello')
-  expect(render.props.name).toBe(undefined)
+  expect(render.props.name).toBeUndefined()
 })
 
 test('renders passed props', () => {
