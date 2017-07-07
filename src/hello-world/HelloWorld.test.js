@@ -8,18 +8,18 @@ beforeEach(() => {
   div = document.createElement('div')
 })
 
-it('renders without fail', () => {
+test('renders without fail', () => {
   ReactDOM.render(<HelloWorld />, div)
 })
 
-it('renders with default state', () => {
+test('renders with default state', () => {
   const render = ReactDOM.render(<HelloWorld />, div)
 
   expect(render.state.greeting).toBe('Hello')
   expect(render.props.name).toBe(undefined)
 })
 
-it('renders passed props', () => {
+test('renders passed props', () => {
   const render = ReactDOM.render(
     <HelloWorld name="Stephen"/>,
     div
@@ -28,7 +28,7 @@ it('renders passed props', () => {
   expect(render.props.name).toBe("Stephen")
 })
 
-it('renders new greeting with Frenchify click()', () => {
+test('renders new greeting with Frenchify click()', () => {
   const render = ReactDOM.render(
     <HelloWorld name="Fox"/>,
     div
@@ -44,7 +44,7 @@ it('renders new greeting with Frenchify click()', () => {
   expect(render.state.greeting).toBe('Bonjour')
 })
 
-it('renders new greeting with Korean click()', () => {
+test('renders new greeting with Korean click()', () => {
   const render = ReactDOM.render(
     <HelloWorld name="김문호"/>,
     div
