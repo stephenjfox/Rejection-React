@@ -14,7 +14,7 @@ describe('Test AskComponent', () => {
   test('Component render() successfully', () => {
     const instance = ReactDOM.render(<AskComponent />, mountPoint)
 
-    expect(instance).not.toBeUndefined()
+    expect(instance).toBeDefined()
     expect(instance).toBeTruthy()
     expect(instance.props).toBeTruthy()
   })

@@ -1,12 +1,16 @@
-import React from 'react';
-import HelloWorld from './hello-world/HelloWorld';
+import React from 'react'
+import AskList from './ask-list/ask-list'
+import generateAsks from './helpers/scaffold'
+
+
+const asks = generateAsks()
 
 const App = () => {
   return (
     <div className="App">
-      <HelloWorld name="Jane" />
+      <AskList asks={asks} />
     </div>
   )
 }
 
-export default App;
+export default App
