@@ -1,5 +1,27 @@
-import AskList from './ask-list'
+import React, { Component } from 'react'
+import Ask from '../ask'
 
-export default {
-  AskList
+class AskList extends Component {
+
+  makeAsk = askEntity => {
+    return (
+      <Ask key={askEntity.ask + askEntity.timestamp}
+            ask={askEntity.ask}
+            askee={askEntity.askee}
+            timestamp={askEntity.timestamp}
+            status={askEntity.status} />
+    )
+  }
+
+  render() {
+    return (
+      <div>
+      {(this.props.asks || [])
+        .map(this.makeAsk)
+      }
+      </div>
+    )
+  }
 }
+
+export default AskList
