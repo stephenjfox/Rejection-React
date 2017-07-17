@@ -9,17 +9,15 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      asks: generateAsks()
+      asks: generateAsks() || []
     }
   }
 
   createAsk = (ask) => {
-    this.setState((oldState) => {
-      return {
-        // functional-style append
-        asks: [...oldState.asks, ask]
-      }
-    })
+    this.setState(oldState => ({
+      // functional-style append
+      asks: [...oldState.asks, ask]
+    }))
   }
 
   render() {

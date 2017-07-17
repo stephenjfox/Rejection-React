@@ -10,16 +10,23 @@ describe('Test Ask Creation Form', () => {
     ReactDOM.render(<AskForm />, getTestMountPoint())
   })
 
-  test('passing "onCreateAsk" handler', () => {
-    let wasClicked = false;
-    const changeState = () => wasClicked = true;
+  test('creates an Ask on form submit', () => {
 
-    expect(wasClicked).toEqual(false)
+    const backingState = [];
+
+    const changeState = ask => backingState.push(ask)
 
     const askForm = ReactDOM.render(<AskForm onCreateAsk={changeState} />, getTestMountPoint())
 
+    expect(backingState).toHaveLength(0)
+
+    // dummy test inputs
+    askForm.refs.ask.value = "Can I get that car for 50% off?"
+    askForm.refs.askee.value = "Hyundai car salesman"
+    askForm.refs.acceptedRadio.checked = true
+
     askForm.submit()
 
-    expect(wasClicked).toBe(true)
+    expect(backingState).toHaveLength(1)
   })
 })
