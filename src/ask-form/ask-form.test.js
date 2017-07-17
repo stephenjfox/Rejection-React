@@ -18,7 +18,7 @@ describe('Test Ask Creation Form', () => {
 
     const askForm = ReactDOM.render(<AskForm onCreateAsk={changeState} />, getTestMountPoint())
 
-    askForm.click()
+    askForm.submit()
 
     expect(wasClicked).toBe(true)
   })

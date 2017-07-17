@@ -5,7 +5,7 @@ class AskList extends Component {
 
   makeAsk = askEntity => {
     return (
-      <Ask key={askEntity.ask + askEntity.timestamp}
+      <Ask key={askEntity.ask + askEntity.timestamp + Math.random().toFixed(2)}
             ask={askEntity.ask}
             askee={askEntity.askee}
             timestamp={askEntity.timestamp}
