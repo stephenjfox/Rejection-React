@@ -16,7 +16,6 @@ test('"asks" data source should be Array-ish', () => {
   const render = ReactDOM.render(<App />, div);
 
   expect(render.state.asks).toBeTruthy()
-  expect(render.state.asks.length).toBeTruthy()
 })
 
 test('createAsk() should be append a new ask', () => {
