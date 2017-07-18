@@ -25,7 +25,9 @@ describe('Test Ask Creation Form', () => {
     askForm.refs.askee.value = "Hyundai car salesman"
     askForm.refs.acceptedRadio.checked = true
 
-    askForm.submit()
+    askForm.submit({
+      preventDefault: () => console.log("Default prevented")
+    })
 
     expect(backingState).toHaveLength(1)
   })

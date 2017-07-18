@@ -6,9 +6,15 @@ export default class AskForm extends Component {
     return this.refs.acceptedRadio.checked ? "Accepted" : "Rejected"
   }
 
+  _resetFields() {
+    this.refs.ask.value = ""
+    this.refs.askee.value = ""
+    // leave the status where it is
+  }
+
   submit = (formSubmitEvent) => {
     // don't submit the page from this event
-    if (formSubmitEvent) formSubmitEvent.preventDefault && formSubmitEvent.preventDefault()
+    formSubmitEvent.preventDefault()
 
     const ask = {
       ask: this.refs.ask.value.trim(),
@@ -17,6 +23,8 @@ export default class AskForm extends Component {
       status: this._parseStatusFromRadioGroup()
     }
     // TODO: clear fields
+    this._resetFields()
+
     console.log("Created Ask instance =", ask)
     this.props.onCreateAsk(ask)
   }
@@ -37,7 +45,7 @@ export default class AskForm extends Component {
               <input type="radio" name="status" value="rejected" ref="rejectedRadio"/>Rejected
             </label>
           </div>
-          <button onClick={() => this.refs._mainForm.submit()}>Submit</button>
+          <input type="submit" />
         </form>
       </div>
     )
