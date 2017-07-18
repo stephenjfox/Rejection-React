@@ -45,7 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <AskList asks={this.state.asks} />
         <AskForm onCreateAsk={this.createAsk} />
         <ScoreCard responseStatuses={this.state.asks.map(({ status }) => status)} />

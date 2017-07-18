@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './ask-form.css'
+
 export default class AskForm extends Component {
 
   _parseStatusFromRadioGroup() {
@@ -45,7 +47,7 @@ export default class AskForm extends Component {
               <input type="radio" name="status" value="rejected" ref="rejectedRadio"/>Rejected
             </label>
           </div>
-          <input type="submit" />
+          <input type="submit" className="button" />
         </form>
       </div>
     )

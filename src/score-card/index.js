@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './score-card.css'
+
 export default class ScoreCard extends Component {
 
   _toPointValue = status => status === "Rejected" ? 10 : 1
